@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Species-Level Fine-Grained Crop Mapping Dataset</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 28px 80px;
+      line-height: 1.65;
+      color: #222;
+      background: #ffffff;
+    }
+
+    h1 {
+      max-width: 950px;
+      margin: 0 auto 14px;
+      text-align: center;
+      font-size: 2.2rem;
+      line-height: 1.25;
+    }
+
+    .authors {
+      text-align: center;
+      color: #555;
+      margin-bottom: 28px;
+      font-size: 1.05rem;
+    }
+
+    .intro {
+      max-width: 850px;
+      margin: 0 auto 55px;
+      text-align: center;
+      color: #444;
+      font-size: 1.05rem;
+    }
+
+    h2 {
+      margin-top: 60px;
+      margin-bottom: 18px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #ddd;
+      font-size: 1.55rem;
+    }
+
+    p {
+      margin: 14px 0;
+    }
+
+    .section-text {
+      max-width: 950px;
+    }
+
+    .figure {
+      margin: 32px 0 42px;
+      text-align: center;
+    }
+
+    .figure img {
+      width: 100%;
+      max-width: 1200px;
+      height: auto;
+      border: 1px solid #ddd;
+      cursor: zoom-in;
+      background: #fafafa;
+    }
+
+    .caption {
+      max-width: 1000px;
+      margin: 12px auto 0;
+      color: #555;
+      font-size: 0.95rem;
+      text-align: left;
+    }
+
+    .caption strong {
+      color: #333;
+    }
+
+    .note {
+      color: #777;
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: -25px;
+      margin-bottom: 38px;
+    }
+
+    .links {
+      text-align: center;
+      margin: 20px 0 50px;
+    }
+
+    .links a,
+    .links span {
+      display: inline-block;
+      margin: 6px 8px;
+      padding: 9px 16px;
+      border: 1px solid #bbb;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #333;
+      background: #fafafa;
+    }
+
+    .links span {
+      color: #888;
+    }
+
+    footer {
+      margin-top: 70px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+      color: #777;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 30px 18px 60px;
+      }
+
+      h1 {
+        font-size: 1.75rem;
+      }
+
+      h2 {
+        font-size: 1.35rem;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <h1>
+    Species-Level Fine-Grained Crop Mapping Using Multispectral Satellite Image Time Series
+  </h1>
+
+  <div class="authors">
+    Qianyi Duan<sup>1,2</sup> · Jing Zhou<sup>1,*</sup> · Nicole P. Anderson<sup>3</sup>
+  </div>
+  <div class="affiliations">
+    <div>
+        <sup>1</sup> Department of Crop and Soil Science,
+        Oregon State University
+    </div>
+    <div>
+        <sup>2</sup> School of Electrical Engineering and Computer Science,
+        Oregon State University
+    </div>
+    <div>
+        <sup>3</sup> Department of Grain and Forage Seed Agronomy, Norwegian Institute of Bioeconomy Research
+    </div>
+    <div>
+        <sup>*</sup> Corresponding author: <a href="mailto:jing.zhou@oregonstate.edu">jing.zhou@oregonstate.edu</a>
+    </div>
+  </div>
+
+  <div class="links">
+    <span>Paper coming soon</span>
+    <span>Dataset coming soon</span>
+    <span>Code coming soon</span>
+  </div>
+
+  <p class="intro">
+    We introduce a benchmark dataset for species-level fine-grained crop mapping
+    from satellite image time series (SITS), focusing on 12 closely related grass and legume seed
+    crop species. The dataset is designed to support the study of fine-grained crop
+    discrimination under high spectral, phenological, and taxonomic similarity.
+  </p>
+
+
+  <h2>Dataset Positioning</h2>
+
+  <div class="section-text">
+    <p>
+      To contextualize the granularity of our dataset, we collected class labels
+      from commonly used public crop mapping datasets and benchmarked them within
+      the Hierarchical Crop and Agriculture Taxonomy (HCAT) framework introduced
+      by Schneider et al. (2023).
+    </p>
+
+    <p>
+      Existing public crop mapping datasets generally focus on broader crop
+      categories and rarely distinguish among closely related crop species within
+      the same genus. Our dataset extends beyond these conventional crop-category
+      levels by providing species-level annotations.
+    </p>
+
+    <p>
+      To our knowledge, this is the first publicly available satellite image time
+      series crop mapping dataset providing species-level annotations across
+      multiple closely related grass and legume seed crop species.
+    </p>
+  </div>
+
+  <div class="figure">
+    <a href="images/15cls.png" target="_blank">
+      <img
+        src="images/15cls.png"
+        alt="Comparison of category coverage and granularity among crop mapping datasets">
+    </a>
+
+    <div class="caption">
+      <strong>Dataset comparison under the HCATv3 framework.</strong>
+      Markers of different colors represent the category coverage of individual
+      crop mapping datasets. The four concentric rings, ordered from the innermost
+      to the outermost level, represent increasingly fine hierarchical levels of
+      agricultural and crop-category granularity. Our dataset extends beyond the
+      outermost HCAT level to species-level crop labels.
+    </div>
+  </div>
+
+  <p class="note">
+    Click the figure to open the full-resolution image.
+  </p>
+
+
+  <h2>Species-Level Coverage</h2>
+
+  <div class="section-text">
+    <p>
+      The original dataset contains fifteen distinct grass and legume seed crop species. 
+      Due to the sensitive and high-value nature of the underlying data, three species cannot be publicly released. 
+      The public version of the dataset therefore includes twelve species, 
+      while the full fifteen-species taxonomy is retained below to illustrate the complete scope and fine-grained structure of the original dataset.
+      Multiple species are represented within several closely related genera,
+      making the dataset particularly suitable for evaluating fine-grained crop
+      classification under high inter-class similarity.
+    </p>
+
+    <p>
+      The represented crop groups include species within
+      <i>Fescue</i>, <i>Ryegrass</i>, <i>Bluegrass</i>,
+      <i>Bentgrass</i>, and <i>Clover</i>.
+    </p>
+  </div>
+
+  <div class="figure">
+    <a href="images/zoom-in.png" target="_blank">
+      <img
+        src="images/zoom-in.png"
+        alt="Species-level category coverage of grass and legume seed crops">
+    </a>
+
+    <div class="caption">
+      <strong>Species-level category coverage of the proposed dataset.</strong>
+      The dataset includes multiple species within several closely related crop
+      groups, including <i>Fescue</i>, <i>Ryegrass</i>,
+      <i>Bluegrass</i>, <i>Bentgrass</i>, and <i>Clover</i>.
+    </div>
+  </div>
+
+  <p class="note">
+    Click the figure to open the full-resolution image.
+  </p>
+
+
+  <h2>Satellite Image Examples</h2>
+
+  <div class="section-text">
+    <p>
+      Representative Sentinel-2 multispectral satellite imagery examples for all
+      twelve target crop species are shown below. Many of these species exhibit
+      highly similar spectral and morphological characteristics, highlighting the
+      difficulty of species-level discrimination from satellite observations.
+    </p>
+  </div>
+
+  <div class="figure">
+    <a href="images/satellite.png" target="_blank">
+      <img
+        src="images/satellite.png"
+        alt="Representative Sentinel-2 imagery for twelve grass and legume seed crop species">
+    </a>
+
+    <div class="caption">
+      <strong>Representative Sentinel-2 imagery.</strong>
+      Multispectral satellite image examples for the twelve grass and legume seed
+      crop species included in the dataset.
+    </div>
+  </div>
+
+  <p class="note">
+    Click the figure to open the full-resolution image.
+  </p>
+
+
+  <h2>Paper</h2>
+
+  <p>
+    The manuscript is currently in preparation. A preprint link will be added here
+    after release.
+  </p>
+
+
+  <h2>Dataset</h2>
+
+  <p>
+    Dataset access information will be added upon public release.
+  </p>
+
+
+  <h2>Citation</h2>
+
+  <p>
+    Citation information will be provided after the manuscript becomes publicly
+    available.
+  </p>
+
+
+  <footer>
+    Project page for the species-level grass and legume seed crop mapping dataset.
+  </footer>
+
+</body>
+
+</html>
