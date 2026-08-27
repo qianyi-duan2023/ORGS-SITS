@@ -70,6 +70,38 @@
       cursor: zoom-in;
       background: #fafafa;
     }
+    /* Hover zoom for the first figure only */
+    .zoom-container {
+      position: relative;
+      width: 100%;
+    }
+
+    .zoom-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      cursor: crosshair;
+    }
+
+    .zoom-preview {
+      position: absolute;
+
+      width: 360px;
+      height: 240px;
+
+      display: none;
+
+      border: 2px solid #555;
+      border-radius: 6px;
+
+      background-repeat: no-repeat;
+      background-color: white;
+
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+
+      pointer-events: none;
+      z-index: 100;
+    }
 
     .caption {
       max-width: 1000px;
@@ -120,53 +152,7 @@
       font-size: 0.9rem;
       text-align: center;
     }
-    .affiliations {
-      text-align: center;
-      color: #666;
-      font-size: 0.92rem;
-      line-height: 1.55;
-      margin-bottom: 28px;
-    }
-    
-    .affiliations a {
-      color: #555;
-      text-decoration: none;
-    }
-    
-    .affiliations a:hover {
-      text-decoration: underline;
-    }
-    
-    .authors {
-      margin-bottom: 8px;
-    }
-    /* Magnifying lens */
-    .figure a {
-      display: block;
-      position: relative;
-    }
-    
-    .zoom-lens {
-      position: absolute;
-      width: 260px;
-      height: 260px;
-      border: 2px solid #555;
-      border-radius: 50%;
-      pointer-events: none;
-      display: none;
-      background-repeat: no-repeat;
-      background-color: white;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
-      z-index: 10;
-    }
-    
-    .figure a:hover .zoom-lens {
-      display: block;
-    }
-    
-    .figure img {
-      cursor: crosshair;
-    }
+
     @media (max-width: 700px) {
       body {
         padding: 30px 18px 60px;
@@ -249,11 +235,15 @@
   </div>
 
   <div class="figure">
-    <a href="images/15cls.png" target="_blank">
+
+    <div class="zoom-container" id="hcat-zoom-container">
       <img
+        id="hcat-zoom-image"
         src="images/15cls.png"
         alt="Comparison of category coverage and granularity among crop mapping datasets">
-    </a>
+
+      <div class="zoom-preview" id="hcat-zoom-preview"></div>
+    </div>
 
     <div class="caption">
       <strong>Dataset comparison under the HCATv3 framework.</strong>
@@ -263,10 +253,11 @@
       agricultural and crop-category granularity. Our dataset extends beyond the
       outermost HCAT level to species-level crop labels.
     </div>
+
   </div>
 
   <p class="note">
-    Click the figure to open the full-resolution image.
+    Hover over the figure to magnify details.
   </p>
 
 
@@ -366,57 +357,66 @@
   <footer>
     Project page for the species-level grass and legume seed crop mapping dataset.
   </footer>
-<script>
-  document.querySelectorAll('.figure a').forEach(container => {
-    const img = container.querySelector('img');
+  <script>
+    const zoomContainer = document.getElementById("hcat-zoom-container");
+    const zoomImage = document.getElementById("hcat-zoom-image");
+    const zoomPreview = document.getElementById("hcat-zoom-preview");
 
-    const lens = document.createElement('div');
-    lens.className = 'zoom-lens';
-    container.appendChild(lens);
+    const zoomLevel = 2;
 
-    const zoom = 2;
-
-    img.addEventListener('mouseenter', () => {
-      lens.style.backgroundImage = `url("${img.src}")`;
+    zoomImage.addEventListener("mouseenter", function () {
+      zoomPreview.style.backgroundImage = `url("${zoomImage.src}")`;
+      zoomPreview.style.display = "block";
     });
 
-    img.addEventListener('mousemove', (e) => {
-      const rect = img.getBoundingClientRect();
+    zoomImage.addEventListener("mousemove", function (event) {
 
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+      const rect = zoomImage.getBoundingClientRect();
 
-      if (x < 0 || y < 0 || x > rect.width || y > rect.height) {
-        lens.style.display = 'none';
-        return;
+      // Mouse position relative to the image
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+
+      const previewWidth = zoomPreview.offsetWidth;
+      const previewHeight = zoomPreview.offsetHeight;
+
+      // Magnified image size
+      zoomPreview.style.backgroundSize =
+        `${rect.width * zoomLevel}px ${rect.height * zoomLevel}px`;
+
+      // Keep the point under the mouse at the center of the zoom window
+      zoomPreview.style.backgroundPosition =
+        `${-(x * zoomLevel - previewWidth / 2)}px ` +
+        `${-(y * zoomLevel - previewHeight / 2)}px`;
+
+      // Put the zoom window beside the mouse
+      let previewX = x + 25;
+      let previewY = y - previewHeight / 2;
+
+      // If there isn't enough space on the right,
+      // move the preview to the left side of the mouse
+      if (previewX + previewWidth > rect.width) {
+        previewX = x - previewWidth - 25;
       }
 
-      lens.style.display = 'block';
-
-      const lensWidth = lens.offsetWidth;
-      const lensHeight = lens.offsetHeight;
-
-      lens.style.left = `${x - lensWidth / 2}px`;
-      lens.style.top = `${y - lensHeight / 2}px`;
-
-      lens.style.backgroundSize =
-        `${rect.width * zoom}px ${rect.height * zoom}px`;
-
-      lens.style.backgroundPosition =
-        `${-(x * zoom - lensWidth / 2)}px ${-(y * zoom - lensHeight / 2)}px`;
-    });
-
-    img.addEventListener('mouseleave', () => {
-      lens.style.display = 'none';
-    });
-
-    container.addEventListener('click', (e) => {
-      if (window.matchMedia('(hover: hover)').matches) {
-        e.preventDefault();
+      // Prevent the preview from going above/below the image
+      if (previewY < 0) {
+        previewY = 0;
       }
+
+      if (previewY + previewHeight > rect.height) {
+        previewY = rect.height - previewHeight;
+      }
+
+      zoomPreview.style.left = `${previewX}px`;
+      zoomPreview.style.top = `${previewY}px`;
     });
-  });
-</script>
+
+    zoomImage.addEventListener("mouseleave", function () {
+      zoomPreview.style.display = "none";
+    });
+  </script>
+
 </body>
 
 </html>
