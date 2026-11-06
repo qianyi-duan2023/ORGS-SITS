@@ -2,7 +2,7 @@
 
 # ORGS-SITS
 
-### Species-Level Fine-Grained Crop Mapping Using Multispectral Satellite Image Time Series
+### Species-Level Fine-Grained Crop Mapping Using Multispectral Satellite Image Time Series: A Feasibility Study in Grass Seed Crops
 
 **Qianyi Duan**<sup>1,2</sup> · **Jing Zhou**<sup>1,\*</sup> · **Nicole P. Anderson**<sup>3</sup>
 
@@ -28,7 +28,7 @@
 
 ## 🔍 Overview
 
-**ORGS-SITS** is a benchmark dataset for **species-level fine-grained crop mapping** from
+**ORGS-SITS** (**OR**egon **G**rass **S**eed – **S**atellite **I**mage **T**ime **S**eries) is a benchmark dataset for **species-level fine-grained crop mapping** from
 satellite image time series (SITS). It focuses on closely related **grass and legume seed
 crop species** in Oregon, USA, and is designed to support the study of fine-grained crop
 discrimination under high spectral, phenological, and taxonomic similarity.
@@ -101,7 +101,7 @@ ORGS-SITS/            # planned layout
 
 ## 📄 Paper
 
-> **Species-Level Fine-Grained Crop Mapping Using Multispectral Satellite Image Time Series**<br>
+> **Species-Level Fine-Grained Crop Mapping Using Multispectral Satellite Image Time Series: A Feasibility Study in Grass Seed Crops**<br>
 > Qianyi Duan, Jing Zhou, Nicole P. Anderson<br>
 > *Manuscript in preparation.* A preprint link will be added here after release.
 
@@ -111,7 +111,7 @@ If you find this dataset useful, please cite (BibTeX will be updated after publi
 
 ```bibtex
 @article{duan2025orgssits,
-  title   = {Species-Level Fine-Grained Crop Mapping Using Multispectral Satellite Image Time Series},
+  title   = {Species-Level Fine-Grained Crop Mapping Using Multispectral Satellite Image Time Series: A Feasibility Study in Grass Seed Crops},
   author  = {Duan, Qianyi and Zhou, Jing and Anderson, Nicole P.},
   journal = {TBD},
   year    = {TBD}
