@@ -33,6 +33,14 @@
       font-size: 1.05rem;
     }
 
+    .affiliations {
+      text-align: center;
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
     .intro {
       max-width: 850px;
       margin: 0 auto 55px;
@@ -189,7 +197,7 @@
         Oregon State University
     </div>
     <div>
-        <sup>3</sup> Department of Grain and Forage Seed Agronomy, Norwegian Institute of Bioeconomy Research
+        <sup>3</sup> Division of Food Production and Society, Norwegian Institute of Bioeconomy Research
     </div>
     <div>
         <sup>*</sup> Corresponding author: <a href="mailto:jing.zhou@oregonstate.edu">jing.zhou@oregonstate.edu</a>
@@ -204,8 +212,8 @@
 
   <p class="intro">
     We introduce a benchmark dataset for species-level fine-grained crop mapping
-    from satellite image time series (SITS), focusing on 12 closely related grass and legume seed
-    crop species. The dataset is designed to support the study of fine-grained crop
+    from satellite image time series (SITS), focusing on closely related grass and legume seed
+    crop species. The public release covers nine grass seed crop species. The dataset is designed to support the study of fine-grained crop
     discrimination under high spectral, phenological, and taxonomic similarity.
   </p>
 
@@ -265,19 +273,33 @@
 
   <div class="section-text">
     <p>
-      The original dataset contains fifteen distinct grass and legume seed crop species. 
-      Due to the sensitive and high-value nature of the underlying data, three species cannot be publicly released. 
-      The public version of the dataset therefore includes twelve species, 
+      The original dataset contains fifteen distinct grass and legume seed crop species.
+      Due to the sensitive and high-value nature of the underlying data, six species cannot be publicly released.
+      The public version of the dataset therefore includes nine species,
       while the full fifteen-species taxonomy is retained below to illustrate the complete scope and fine-grained structure of the original dataset.
-      Multiple species are represented within several closely related genera,
+      Multiple closely related species are represented within the same crop groups,
       making the dataset particularly suitable for evaluating fine-grained crop
       classification under high inter-class similarity.
     </p>
 
     <p>
-      The represented crop groups include species within
-      <i>Fescue</i>, <i>Ryegrass</i>, <i>Bluegrass</i>,
-      <i>Bentgrass</i>, and <i>Clover</i>.
+      The nine publicly released species are:
+      tall fescue [<i>Schedonorus arundinaceus</i> (Schreb.) Dumort.],
+      perennial ryegrass (<i>Lolium perenne</i> L.),
+      annual ryegrass (<i>Lolium multiflorum</i> Lam.),
+      Kentucky bluegrass (<i>Poa pratensis</i> L.),
+      Chewings fescue [<i>Festuca rubra</i> L. ssp. <i>commutata</i> Gaudin;
+      syn. <i>Festuca rubra</i> L. ssp. <i>fallax</i> (Thuill.) Nyman],
+      red fescue [including strong creeping red fescue (<i>F. rubra</i> L. ssp. <i>rubra</i> Gaudin)
+      and slender creeping red fescue (<i>F. rubra</i> L. ssp. <i>littoralis</i> (G. Mey.) Auquier)],
+      hard fescue (<i>Festuca brevipila</i> Tracey),
+      orchardgrass (<i>Dactylis glomerata</i> L.), and
+      creeping bentgrass (<i>Agrostis stolonifera</i> L.).
+    </p>
+
+    <p>
+      Following agronomic convention and the HCAT category definitions, tall fescue
+      is grouped with the <i>Festuca</i> species under the HCAT “fescue” category in the figures.
     </p>
   </div>
 
@@ -290,9 +312,9 @@
 
     <div class="caption">
       <strong>Species-level category coverage of the proposed dataset.</strong>
-      The dataset includes multiple species within several closely related crop
-      groups, including <i>Fescue</i>, <i>Ryegrass</i>,
-      <i>Bluegrass</i>, <i>Bentgrass</i>, and <i>Clover</i>.
+      The full fifteen-species taxonomy of the original dataset, placed under
+      HCATv3 agronomic categories. Tall fescue (<i>Schedonorus arundinaceus</i>)
+      is shown under the HCAT fescue category.
     </div>
   </div>
 
@@ -305,8 +327,8 @@
 
   <div class="section-text">
     <p>
-      Representative Sentinel-2 multispectral satellite imagery examples for all
-      twelve target crop species are shown below. Many of these species exhibit
+      Representative Sentinel-2 multispectral satellite imagery examples for the
+      nine publicly released species and three clover species are shown below. Many of these species exhibit
       highly similar spectral and morphological characteristics, highlighting the
       difficulty of species-level discrimination from satellite observations.
     </p>
@@ -316,13 +338,14 @@
     <a href="images/satellite.png" target="_blank">
       <img
         src="images/satellite.png"
-        alt="Representative Sentinel-2 imagery for twelve grass and legume seed crop species">
+        alt="Representative Sentinel-2 imagery for grass and legume seed crop species">
     </a>
 
     <div class="caption">
       <strong>Representative Sentinel-2 imagery.</strong>
-      Multispectral satellite image examples for the twelve grass and legume seed
-      crop species included in the dataset.
+      Multispectral satellite image examples for twelve grass and legume seed
+      crop species. Red, crimson, and white clover (panels e, j, l) are not
+      included in the public release.
     </div>
   </div>
 
