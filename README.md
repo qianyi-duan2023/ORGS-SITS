@@ -31,7 +31,7 @@
 **ORGS-SITS** (**OR**egon **G**rass **S**eed – **S**atellite **I**mage **T**ime **S**eries) is a benchmark dataset for **species-level fine-grained crop mapping** from
 satellite image time series (SITS). It focuses on closely related **grass and legume seed
 crop species** in Oregon, USA, and is designed to support the study of fine-grained crop
-discrimination under high spectral, phenological, and taxonomic similarity.
+differentiation under high spectral, phenological, and taxonomic similarity.
 
 - **Species-level labels** — goes beyond the finest level of existing crop taxonomies.
 - **Fine-grained** — multiple closely related species within the same crop group
