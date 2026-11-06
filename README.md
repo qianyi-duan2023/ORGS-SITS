@@ -47,6 +47,15 @@ coverage of public crop mapping datasets; the four rings represent increasingly 
 levels. ORGS-SITS extends beyond the outermost HCAT level to species-level labels.
 </sub></p>
 
+<p align="center">
+  <img src="images/zoom-in.png" width="85%" alt="Species-level category coverage of the proposed dataset">
+</p>
+<p align="center"><sub>
+<b>Species-level category coverage of the proposed dataset.</b> The full fifteen-species
+taxonomy of the original dataset, placed under HCATv3 agronomic categories. Tall fescue
+(<i>Schedonorus arundinaceus</i>) is shown under the HCAT fescue category.
+</sub></p>
+
 ## 🗂️ Dataset
 
 > The dataset will be released upon publication of the paper. Download links and detailed
