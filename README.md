@@ -90,24 +90,13 @@ fescue (*F. rubra* ssp. *littoralis*).</sub>
 
 <!-- TODO: add sample counts per class. -->
 
-### Hierarchical labels
-
-Labels follow a hierarchy from land cover and USDA NASS Cropland Data Layer (CDL) class down
-to family, genus, species, and subspecies. Non-crop pixels identified from the CDL (classes 82,
-83, 87, 92, 111, 121–124) are merged into **Others**; all other unlabeled pixels are **Ignore**.
-Dashed boxes are reserved for non-grass crop classes in future releases.
-
-<p align="center">
-  <img src="images/hierarchical_labels.png" width="90%" alt="Hierarchical label structure of ORGS-SITS">
-</p>
-
 ### Data format
 
 <!-- TODO: fill in after release -->
 | Item | Description |
 |---|---|
 | Sensor | Sentinel-2 L2A (multispectral) |
-| Region | Willamette Valley, Oregon, USA |
+| Region | Oregon, USA (Willamette Valley, central Oregon, Columbia Basin, and Grande Ronde Valley) |
 | Time span | TBD |
 | Samples | TBD (parcels / pixels) |
 | Splits | TBD (train / val / test) |
