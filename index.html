@@ -111,6 +111,22 @@
       z-index: 100;
     }
 
+    .cover img {
+      cursor: default;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 2px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .credits {
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    .credits summary {
+      cursor: pointer;
+    }
+
     .caption {
       max-width: 1000px;
       margin: 12px auto 0;
@@ -210,6 +226,11 @@
     <span>Code coming soon</span>
   </div>
 
+  <div class="figure cover">
+    <img src="images/cover.jpg"
+      alt="ORGS-SITS cover: field and close-up photographs of fifteen grass and legume seed crop species">
+  </div>
+
   <p class="intro">
     We introduce <strong>ORGS-SITS</strong> (<strong>OR</strong>egon <strong>G</strong>rass <strong>S</strong>eed – <strong>S</strong>atellite <strong>I</strong>mage <strong>T</strong>ime <strong>S</strong>eries), a benchmark dataset for species-level fine-grained crop mapping
     from satellite image time series (SITS), focusing on closely related grass and legume seed
@@ -256,10 +277,11 @@
     <div class="caption">
       <strong>Dataset comparison under the HCATv3 framework.</strong>
       Markers of different colors represent the category coverage of individual
-      crop mapping datasets. The four concentric rings, ordered from the innermost
-      to the outermost level, represent increasingly fine hierarchical levels of
-      agricultural and crop-category granularity. Our dataset extends beyond the
-      outermost HCAT level to species-level crop labels.
+      crop mapping datasets. The four inner rings represent increasingly fine
+      HCATv3 levels of agricultural and crop-category granularity. Beyond the
+      outermost HCAT level, our classes are further organized into species and
+      subspecies rings according to their scientific names, with class names
+      shown outside.
     </div>
 
   </div>
@@ -298,8 +320,10 @@
     </p>
 
     <p>
-      Following agronomic convention and the HCAT category definitions, tall fescue
-      is grouped with the <i>Festuca</i> species under the HCAT “fescue” category in the figures.
+      In the figures, classes are organized by their scientific names into genus,
+      species, and, where a class is defined below the species level
+      (<i>Festuca rubra</i>), subspecies. Tall fescue is therefore placed in its own
+      genus <i>Schedonorus</i> rather than under the HCAT “festuca_fescue” category.
     </p>
   </div>
 
@@ -312,9 +336,41 @@
 
     <div class="caption">
       <strong>Species-level category coverage of the proposed dataset.</strong>
-      The full fifteen-species taxonomy of the original dataset, placed under
-      HCATv3 agronomic categories. Tall fescue (<i>Schedonorus arundinaceus</i>)
-      is shown under the HCAT fescue category.
+      Zoomed view of the grass and legume sector (left) and its location in the
+      full HCATv3 sunburst (right). The fifteen classes of the original dataset are
+      organized by genus, species, and subspecies; Chewings fescue and red fescue
+      are both subspecies of <i>Festuca rubra</i>.
+    </div>
+  </div>
+
+  <p class="note">
+    Click the figure to open the full-resolution image.
+  </p>
+
+
+  <h2>Hierarchical Label Structure</h2>
+
+  <div class="section-text">
+    <p>
+      ORGS-SITS labels follow a hierarchy from land cover and USDA NASS Cropland
+      Data Layer (CDL) class down to family, genus, species, and subspecies. All
+      nine public classes fall under CDL class 59 (Sod/Grass Seed); non-crop
+      pixels identified from the CDL are merged into a single “Others” class.
+      The empty slots are reserved for non-grass crop classes that may be added
+      in future releases.
+    </p>
+  </div>
+
+  <div class="figure">
+    <a href="images/hierarchical_labels.png" target="_blank">
+      <img
+        src="images/hierarchical_labels.png"
+        alt="Hierarchical label structure of ORGS-SITS">
+    </a>
+
+    <div class="caption">
+      <strong>Hierarchical label structure of the public release.</strong>
+      Dashed boxes are placeholders for future non-grass crop classes.
     </div>
   </div>
 
@@ -375,6 +431,45 @@
     Citation information will be provided after the manuscript becomes publicly
     available.
   </p>
+
+
+  <h2>Photo Credits</h2>
+
+  <details class="credits">
+    <summary>Cover image photographs (Wikimedia Commons and USDA NRCS; cropped and resized)</summary>
+    <ul>
+        <li>tall fescue (field): <a href="https://commons.wikimedia.org/wiki/File:Door_intensieve_landbouw_veroorzaakte,_sterk_gedegradeerde_graslanden_gedomineerd_door_rietzwenkgras_(Schedonorus_arundinaceus).jpg">Wikimedia Commons</a>, Industrees, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a></li>
+        <li>tall fescue (closeup): <a href="https://commons.wikimedia.org/wiki/File:Schedonorus_arundinaceus_-_Flickr_-_Matt_Lavin.jpg">Wikimedia Commons</a>, Matt Lavin from Bozeman, Montana, USA, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a></li>
+        <li>perennial ryegrass (field): <a href="https://commons.wikimedia.org/wiki/File:Perennial_Ryegrass_Nursery.jpg">Wikimedia Commons</a>, NO1JGFN, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+        <li>perennial ryegrass (closeup): <a href="https://commons.wikimedia.org/wiki/File:Lolium_perenne_spikelets2_anthesis_(7370357812).jpg">Wikimedia Commons</a>, Harry Rose from South West Rocks, Australia, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a></li>
+        <li>annual ryegrass (field): <a href="https://commons.wikimedia.org/wiki/File:Welsches_Weidelgras.JPG">Wikimedia Commons</a>, Blonder1984, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a></li>
+        <li>annual ryegrass (closeup): <a href="https://commons.wikimedia.org/wiki/File:Lolium_multiflorum,_Santa_Coloma_de_Farners.jpg">Wikimedia Commons</a>, Josep Gesti, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+        <li>Kentucky bluegrass (field): <a href="https://commons.wikimedia.org/wiki/File:Blooming_Poa_pratensis.jpg">Wikimedia Commons</a>, Sciencia58, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a></li>
+        <li>Kentucky bluegrass (closeup): <a href="https://commons.wikimedia.org/wiki/File:Poa_pratensis_1.jpg">Wikimedia Commons</a>, Sciencia58, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a></li>
+        <li>Chewings fescue (field): <a href="https://commons.wikimedia.org/wiki/File:Chewing&#x27;s_fescue_(Festuca_rubra_subsp._commutata)_-_Christchurch_Botanic_Gardens_-_Christchurch,_NZ_-_DSC00995.jpg">Wikimedia Commons</a>, Daderot, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a></li>
+        <li>Chewings fescue (closeup): <a href="https://commons.wikimedia.org/wiki/File:Festuca_rubra_(26750501824).jpg">Wikimedia Commons</a>, Donald Hobern from Copenhagen, Denmark, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a></li>
+        <li>red fescue (field): <a href="https://commons.wikimedia.org/wiki/File:1352_Rotschwingel_am_Feldweg_der_von_Tiefenbach_nach_Westen_zum_Wald_f%C3%BChrt.jpg">Wikimedia Commons</a>, Kersti Nebelsiek, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+        <li>red fescue (closeup): <a href="https://commons.wikimedia.org/wiki/File:Festuca_rubra_subsp._rubra_sl15.jpg">Wikimedia Commons</a>, Stefan.lefnaer, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+        <li>hard fescue (field): <a href="https://www.nrcs.usda.gov/plantmaterials/wapmcpg14125.pdf">USDA NRCS Plant Guide for hard fescue (MacMillan, Wayment &amp; Lee, 2024)</a>, Dave Skinner, USDA-NRCS, Public domain (U.S. Government work)</li>
+        <li>hard fescue (closeup): <a href="https://commons.wikimedia.org/wiki/File:Festuca_brevipila-2.jpg">Wikimedia Commons</a>, Rainer Burkard, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+        <li>orchardgrass (field): <a href="https://commons.wikimedia.org/wiki/File:Horstvorming_bij_kropaar_(Dactylis_glomerata).jpg">Wikimedia Commons</a>, Cultureel Gelderland, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a></li>
+        <li>orchardgrass (closeup): <a href="https://commons.wikimedia.org/wiki/File:20150521Dactylis_glomerata2.jpg">Wikimedia Commons</a>, AnRo0002, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a></li>
+        <li>creeping bentgrass (field): <a href="https://commons.wikimedia.org/wiki/File:Agrostis_stolonifera_(3820197869).jpg">Wikimedia Commons</a>, Matt Lavin from Bozeman, Montana, USA, <a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a></li>
+        <li>creeping bentgrass (closeup): <a href="https://commons.wikimedia.org/wiki/File:Agrostis_stolonifera_inflorescens_(4).jpg">Wikimedia Commons</a>, Andrea Moro, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+        <li>sheep fescue (field): <a href="https://www.nrcs.usda.gov/plantmaterials/wapmcpg12477.pdf">USDA NRCS Plant Guide for sheep fescue (Ogle et al., 2010)</a>, D. Ogle, NRCS, Public domain (U.S. Government work)</li>
+        <li>sheep fescue (closeup): <a href="https://commons.wikimedia.org/wiki/File:Atlas_roslin_pl_Kostrzewa_owcza_6694_8347.jpg">Wikimedia Commons</a>, Joanna Boisse, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+        <li>rough bluegrass (field): <a href="https://commons.wikimedia.org/wiki/File:Gemeine_Rispe_Reinwuchs_um_Hangquelle_in_Schottwien,_Semmeringgebiet,_Nieder%C3%B6sterreich_20100421.jpg">Wikimedia Commons</a>, Futterwiesenjefe, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+        <li>rough bluegrass (closeup): <a href="https://commons.wikimedia.org/wiki/File:Poa_trivialis_kz02.jpg">Wikimedia Commons</a>, Krzysztof Ziarnek, Kenraiz, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+        <li>colonial bentgrass (field): <a href="https://commons.wikimedia.org/wiki/File:Agrostis_capillaris_sl15.jpg">Wikimedia Commons</a>, Stefan.lefnaer, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+        <li>colonial bentgrass (closeup): <a href="https://commons.wikimedia.org/wiki/File:20160624Agrostis_capillaris2.jpg">Wikimedia Commons</a>, AnRo0002, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a></li>
+        <li>red clover (field): <a href="https://commons.wikimedia.org/wiki/File:Bochum_-_Vor_den_Teichen_-_Rotklee_02_ies.jpg">Wikimedia Commons</a>, Frank Vincentz, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a></li>
+        <li>red clover (closeup): <a href="https://commons.wikimedia.org/wiki/File:2009-09-25_(17)_Trifolium_pratense.jpg">Wikimedia Commons</a>, Vera Buhl, <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a></li>
+        <li>crimson clover (field): <a href="https://commons.wikimedia.org/wiki/File:Trifolium_incarnatum_field.jpg">Wikimedia Commons</a>, Nefronus, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+        <li>crimson clover (closeup): <a href="https://commons.wikimedia.org/wiki/File:2019_Blutklee_01.jpg">Wikimedia Commons</a>, Derzno, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+        <li>white clover (field): <a href="https://commons.wikimedia.org/wiki/File:Field_of_white_clover_-_16_June_2025.jpg">Wikimedia Commons</a>, Aethonatic, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a></li>
+        <li>white clover (closeup): <a href="https://commons.wikimedia.org/wiki/File:Trifolium_repens_inflorescence_-_Niitv%C3%A4lja.jpg">Wikimedia Commons</a>, Ivar Leidus, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+    </ul>
+  </details>
 
 
   <footer>

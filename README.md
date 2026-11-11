@@ -18,6 +18,11 @@
 
 </div>
 
+<p align="center">
+  <img src="images/cover.jpg" width="100%" alt="ORGS-SITS cover: field and close-up photographs of the crop species">
+</p>
+<p align="center"><sub>Cover photos: Wikimedia Commons contributors (CC0 / CC BY / CC BY-SA), cropped and resized — see <a href="images/cover_credits.md">photo credits</a>.</sub></p>
+
 ---
 
 ## 📰 News
@@ -43,17 +48,18 @@ differentiation under high spectral, phenological, and taxonomic similarity.
 </p>
 <p align="center"><sub>
 <b>Dataset comparison under the HCATv3 framework.</b> Coloured markers show the category
-coverage of public crop mapping datasets; the four rings represent increasingly fine HCAT
-levels. ORGS-SITS extends beyond the outermost HCAT level to species-level labels.
+coverage of public crop mapping datasets; the four inner rings represent increasingly fine HCAT
+levels. ORGS-SITS extends beyond the outermost HCAT level with species and subspecies rings
+defined by the crops' scientific names.
 </sub></p>
 
 <p align="center">
   <img src="images/zoom-in.png" width="85%" alt="Species-level category coverage of the proposed dataset">
 </p>
 <p align="center"><sub>
-<b>Species-level category coverage of the proposed dataset.</b> The full fifteen-species
-taxonomy of the original dataset, placed under HCATv3 agronomic categories. Tall fescue
-(<i>Schedonorus arundinaceus</i>) is shown under the HCAT fescue category.
+<b>Species-level category coverage of the proposed dataset.</b> The fifteen classes of the
+original dataset organized by genus, species, and subspecies; tall fescue is placed in its own
+genus <i>Schedonorus</i>, and Chewings and red fescue are subspecies of <i>Festuca rubra</i>.
 </sub></p>
 
 ## 🗂️ Dataset
@@ -80,10 +86,20 @@ public release:
 | 9 | Creeping bentgrass | *Agrostis stolonifera* L. |
 
 <sub>¹ Includes strong creeping red fescue (*F. rubra* ssp. *rubra*) and slender creeping red
-fescue (*F. rubra* ssp. *littoralis*). In the figures, tall fescue is grouped with the
-*Festuca* species under the HCATv3 "fescue" category, following agronomic convention.</sub>
+fescue (*F. rubra* ssp. *littoralis*).</sub>
 
 <!-- TODO: add sample counts per class. -->
+
+### Hierarchical labels
+
+Labels follow a hierarchy from land cover and USDA NASS Cropland Data Layer (CDL) class down
+to family, genus, species, and subspecies. Non-crop pixels identified from the CDL (classes 82,
+83, 87, 92, 111, 121–124) are merged into **Others**; all other unlabeled pixels are **Ignore**.
+Dashed boxes are reserved for non-grass crop classes in future releases.
+
+<p align="center">
+  <img src="images/hierarchical_labels.png" width="90%" alt="Hierarchical label structure of ORGS-SITS">
+</p>
 
 ### Data format
 
