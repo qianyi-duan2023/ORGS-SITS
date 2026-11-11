@@ -19,9 +19,9 @@
 </div>
 
 <p align="center">
-  <img src="images/cover.jpg" width="100%" alt="ORGS-SITS cover: field and close-up photographs of the crop species">
+  <img src="images/cover.jpg" width="100%" alt="ORGS-SITS cover: Sentinel-2 patch, field photo and plant close-up for each crop species">
 </p>
-<p align="center"><sub>Cover photos: Wikimedia Commons contributors (CC0 / CC BY / CC BY-SA), cropped and resized — see <a href="images/cover_credits.md">photo credits</a>.</sub></p>
+<p align="center"><sub>Each species shown from Sentinel-2 patch to field to plant. Sentinel-2 patches contain modified Copernicus Sentinel data; photos from Wikimedia Commons contributors and USDA NRCS, cropped and resized — see <a href="images/cover_credits.md">credits</a>.</sub></p>
 
 ---
 

@@ -1,6 +1,6 @@
-# Cover image photo credits
+# Cover image credits
 
-The cover image is a composite of the photographs below (Wikimedia Commons and USDA NRCS). Photos are cropped and resized. Licences as listed.
+The cover image combines Sentinel-2 example patches from the ORGS-SITS dataset (contains modified Copernicus Sentinel data) with the photographs below (Wikimedia Commons and USDA NRCS). Photos are cropped and resized. Licences as listed.
 
 | Species | Photo | Author | Licence | Source |
 |---|---|---|---|---|
