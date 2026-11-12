@@ -132,6 +132,12 @@ If you find this dataset useful, please cite (BibTeX will be updated after publi
 }
 ```
 
+## 🙏 Acknowledgements
+
+We thank the Oregon Seed Certification Service (OSCS) for graciously providing grass seed crop field location and species ground truth data. Such high-quality data laid a critical foundation for our model training and validation. We are particularly grateful to Andy Altishin for his valuable support and coordination in data sharing.
+
+We also thank Aaron Affeldt for his help with dataset annotation.
+
 ## 📜 License
 
 TBD.
