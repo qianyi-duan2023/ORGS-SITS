@@ -111,7 +111,7 @@ ORGS-SITS/            # planned layout
 <p align="center">
   <img src="images/satellite.png" width="85%" alt="Representative Sentinel-2 imagery">
 </p>
-<p align="center"><sub><b>Representative Sentinel-2 imagery.</b> Red, crimson, and white clover (e, j, l) are not included in the public release.</sub></p>
+<p align="center"><sub><b>Representative Sentinel-2 imagery</b> (mid-May to mid-June, 1.28 km × 1.28 km). The yellow outline marks the labelled target field. Panels (a)–(i) are the nine publicly released species; (j)–(o) are not publicly released.</sub></p>
 
 ## 📄 Paper
 
